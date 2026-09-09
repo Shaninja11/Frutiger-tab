@@ -1,14 +1,26 @@
 <!DOCTYPE html>
-<main>
+<html lang="en">
     <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <link rel="stylesheet" href="style.css">
+        <title>Start Page</title>
     </head>
     <body>
-        <div>
-            <form onsubmit="search()">
-                <input type="text" id="inputField" placeholder="Enter text here">
-            </form>
-        </div>
+        <main>
+            <div>
+                <form onsubmit="search()">
+                    <input type="text" id="inputField" placeholder="Enter text here">
+                </form>
+                <label for="chooseprov">Provider:</label>
+                <select name="prov" id="chooseprov">
+                    <option value="1">Ecosia</option>
+                    <option value="2">Startpage</option>
+                    <option value="3">Brave Search</option>
+                    <option value="4">Qwant</option>
+                </select>
+            </div>
+        </main>
         <script src="script.js"></script>
     </body>
-</main>
+</html>
