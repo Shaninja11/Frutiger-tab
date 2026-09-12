@@ -11,3 +11,24 @@ p {
     color: rgb(255, 255, 255);
     font-size: 42px;
 }
+
+.searchbox {
+    background-color: black;
+    display:flex;
+    position: absolute; 
+    margin-left: 35%;
+    margin-top: 350px; 
+    margin-bottom: auto;
+    
+}
+
+.inputField {
+    background-color: black;
+    color: white;
+    font-family: "Instrument Serif", serif;
+    margin-left: 0px;
+    margin-right: 0px;
+    border-radius: 10px;
+    border-width: 2px;
+    border-color: white;
+}
