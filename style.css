@@ -1,7 +1,17 @@
-@import url('https://fonts.googleapis.com/css2?family=Instrument+Serif:ital@0;1&family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
+
+
 
 body {
-    background-color: rgb(0, 0, 0);
+    background-image: url('wallpaper.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    background-position: center;
+    background-repeat:no-repeat;
+    font-family: "Inter", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 40px;
+    font-style: normal;
 }
 
 p {
@@ -13,22 +23,23 @@ p {
 }
 
 .searchbox {
-    background-color: black;
     display:flex;
-    position: absolute; 
-    margin-left: 35%;
-    margin-top: 350px; 
+    justify-content: center;
+    position: relative; 
+    margin-left: 15%;
+    margin-right: 15%;
+    margin-top: 45vh; 
     margin-bottom: auto;
-    
 }
 
 .inputField {
-    background-color: black;
-    color: white;
-    font-family: "Instrument Serif", serif;
-    margin-left: 0px;
-    margin-right: 0px;
-    border-radius: 10px;
-    border-width: 2px;
-    border-color: white;
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(41, 41, 41, 0.497);
+    border-color: rgba(75, 75, 75, 0.422);
+    border-radius: 20px;
+    border-width: 3px;
+    border-style: solid;
+    backdrop-filter: blur(5px);
+    height: 50px;
 }
