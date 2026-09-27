@@ -14,14 +14,6 @@ body {
     font-style: normal;
 }
 
-p {
-    font-family: "Instrument Serif", serif;
-    font-weight: 400;
-    font-style: normal;
-    color: rgb(255, 255, 255);
-    font-size: 42px;
-}
-
 .searchbox {
     display:flex;
     justify-content: center;
@@ -35,11 +27,99 @@ p {
 .inputField {
     position: relative;
     background-color: rgba(255, 255, 255, 0);
-    color: rgba(41, 41, 41, 0.497);
+    color: rgba(33, 32, 32, 0.644);
     border-color: rgba(75, 75, 75, 0.422);
     border-radius: 20px;
     border-width: 3px;
     border-style: solid;
     backdrop-filter: blur(5px);
     height: 50px;
+}
+
+.shortcuts {
+    display: flex;
+    margin-left: 20%;
+    margin-right: 20%;
+    margin-top: 5vh;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(41, 41, 41, 0.497);
+    border-color: rgba(75, 75, 75, 0.422);
+    border-radius: 20px;
+    border-width: 3px;
+    border-style: solid;
+    backdrop-filter: blur(5px);
+    height: auto;
+    flex-direction: row;
+    justify-content: space-evenly;
+    flex-flow: wrap;
+}
+
+.setshort {
+    display:none;
+    flex-direction: column;
+    justify-content: center;
+    position: relative; 
+    margin-left: 40%;
+    margin-right: 40%;
+    margin-top: 0vh; 
+    margin-bottom: auto;
+}
+
+.shortfiller {
+    position: relative;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(41, 41, 41, 0.497);
+    border-color: rgba(75, 75, 75, 0.422);
+    border-radius: 20px;
+    border-width: 3px;
+    border-style: solid;
+    backdrop-filter: blur(5px);
+    margin-top: 4px;
+}
+
+.shorts {
+    margin: 0px;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(41, 41, 41, 0.497);
+    border-style: none;
+    height: 100%;
+    width: 100%;
+}
+
+label {
+    color: rgba(41, 41, 41, 0.497);
+    font-size: 10px;
+    margin-top: 5px;
+    margin-bottom: 0px;
+}
+
+.shortbox {
+    display:flex;
+    margin: 5px;
+    border-style: solid;
+    border-color: rgba(75, 75, 75, 0.422);
+    border-radius: 10px;
+    border-width: 3px;
+    height: 6vh;
+    flex: auto;
+}
+
+.editshort {
+    background-color: rgba(0, 0, 0, 0);
+    border-color: rgba(75, 75, 75, 0.422);
+    border-radius: 5px;
+    position: relative;
+    border-style: solid;
+    margin-top: 5px;
+    margin-right: 5px;
+    margin-bottom: 20px;
+    margin-left: 5px;
+    width: auto;
+}
+
+.warning {
+    color: rgb(255, 0, 0);
+    font-size: 15px;
+    align-self: center;
+    
 }

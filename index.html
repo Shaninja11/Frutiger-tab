@@ -15,9 +15,35 @@
                 <select style="width: 10vw; font-size: 20px; margin-top: 5px; margin-left: 10px;" class="inputField" name="prov" id="chooseprov">
                     <option value="1">Ecosia</option>
                     <option value="2">Startpage</option>
-                    <option value="3">Brave Search</option>
+                    <option value="3">Brave</option>
                     <option value="4">Qwant</option>
                 </select>
+            </div>
+            <div class="shortcuts">
+                <div class="shortbox">
+                    <button class="shorts" onclick="shortcut(1)" id="short1">Shortcut 1</button>
+                    <button class="editshort" onclick="editshort(1)">...</button>
+                </div>
+                <div class="shortbox">
+                    <button class="shorts" onclick="shortcut(2)" id="short2">Shortcut 2</button>
+                    <button class="editshort" onclick="editshort(2)">...</button>
+                </div>
+                <div class="shortbox">
+                    <button class="shorts" onclick="shortcut(3)" id="short3">Shortcut 3</button>
+                    <button class="editshort" onclick="editshort(3)">...</button>
+                </div>
+                <div class="shortbox">
+                    <button class="shorts" onclick="shortcut(4)" id="short4">Shortcut 4</button>
+                    <button class="editshort" onclick="editshort(4)">...</button>
+                </div>
+            </div>
+            <div class="setshort" id="shortmenu">
+                <p id="warning" class="warning"></p>
+                <label for="label">Label</label>
+                <input class="shortfiller" name="label" type="text" id="label" placeholder="name"/>
+                <label for="link">URL</label>
+                <input class="shortfiller" name="link" type="url" value="https://" id="link" />
+                <input class="shortfiller" onclick="AddShortcut()" type="button" id="btn" value="Update" />
             </div>
         </main>
         <script src="script.js"></script>

@@ -1,5 +1,59 @@
 const inputField = document.getElementById("inputField");
 const providerSelect = document.getElementById("chooseprov");
+const warning = document.getElementById("warning")
+var btn = document.getElementById('btn');
+var link = document.getElementById('link');
+var label = document.getElementById("label")
+var shortmenu = document.getElementById("shortmenu")
+var shortnum = ""
+
+//shortcuts
+
+for (let i = 1; i < 5; i++) {
+  if (localStorage.getItem("label"+i) != null){
+    setshortcut(i)
+  }
+  else {
+    document.getElementById("short"+i).innerHTML = "none"
+  }
+}
+
+function editshort(n) {
+  warning.innerHTML = ""
+  shortmenu.style.display = "flex"
+  link.value = localStorage.getItem(n)
+  label.value = localStorage.getItem("label"+n)
+  shortnum = n
+}
+
+function setshortcut(n) {
+  x = document.getElementById("short"+n)
+  x.innerHTML = localStorage.getItem("label"+n)
+}
+
+function AddShortcut() {
+  if (!link.value.includes("http"))  {
+    warning.innerHTML = "Invalid URL (Must begin with https:// or http://)"
+  }
+  else if (label.value == "") {
+    warning.innerHTML = "Label cannot be empty"
+  }
+  else {
+    localStorage.setItem(shortnum, link.value)
+    localStorage.setItem("label"+shortnum, label.value)
+    setshortcut(shortnum)
+    shortmenu.style.display = "none"
+  }
+}
+
+function shortcut(n) {
+  window.open(localStorage.getItem(n))
+}
+
+
+
+
+// search bar
 
 function search() {
   event.preventDefault();
