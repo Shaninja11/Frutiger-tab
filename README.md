@@ -1,2 +1,3 @@
-A new tab page designed with a modern Frutiger-Aero style. 
-Wallpaper by <a href="https://unsplash.com/@firli?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Firli S</a> on <a href="https://unsplash.com/photos/futuristic-living-room-with-city-view-3O1Hw6HwdsY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
+- A new tab page designed with a modern Frutiger-Aero style.
+- Github Pages site: <a href="https://shaninja11.github.io/Frutiger-tab/">Frutiger Tab<a> 
+- Wallpaper by <a href="https://unsplash.com/@firli?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Firli S</a> on <a href="https://unsplash.com/photos/futuristic-living-room-with-city-view-3O1Hw6HwdsY?utm_source=unsplash&utm_medium=referral&utm_content=creditCopyText">Unsplash</a>
