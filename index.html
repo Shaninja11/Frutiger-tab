@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="style.css">
         <title>Start Page</title>
     </head>
-    <body>
+    <body id="body">
         <main>
             <div class="searchbox">
                 <form onsubmit="search()">
@@ -44,6 +44,14 @@
                 <label for="link">URL</label>
                 <input class="shortfiller" name="link" type="url" value="https://" id="link" />
                 <input class="shortfiller" onclick="AddShortcut()" type="button" id="btn" value="Update" />
+            </div>
+            <button class="wallbtn" onclick="showwall()">Edit Wallpaper</button>
+            <div class="editwall" id="editwall">
+                <button style="background: url(./Wallpapers/Blue.jpg); background-size: cover;" class="choosewall" onclick="choosewall('./Wallpapers/Blue.jpg')" id="short1"></button>
+                <button style="background: url(./Wallpapers/Green.jpg); background-size: cover;" class="choosewall" onclick="choosewall('./Wallpapers/Green.jpg')" id="short2"></button>
+                <button style="background: url(./Wallpapers/Orange.jpg); background-size: cover;" class="choosewall" onclick="choosewall('./Wallpapers/Orange.jpg')" id="short3"></button>
+                <button style="background: url(./Wallpapers/Trees.jpg); background-size: cover;" class="choosewall" onclick="choosewall('./Wallpapers/Trees.jpg')" id="short4"></button>
+                <button class="choosewall" onclick="nasa()" id="short4">Nasa (WIP)</button>
             </div>
         </main>
         <script src="script.js"></script>

@@ -1,11 +1,29 @@
 const inputField = document.getElementById("inputField");
 const providerSelect = document.getElementById("chooseprov");
 const warning = document.getElementById("warning")
+const editwall = document.getElementById("editwall")
 var btn = document.getElementById('btn');
+var wallpaper = 'Wallpapers/Blue.jpg'
 var link = document.getElementById('link');
 var label = document.getElementById("label")
 var shortmenu = document.getElementById("shortmenu")
 var shortnum = ""
+
+// wallpaper
+if (localStorage.getItem("wp") != null) {wallpaper = localStorage.getItem("wp")}
+document.body.style.backgroundImage= "url("+wallpaper+")"
+function choosewall(n){
+  localStorage.setItem("wp", n)
+  document.body.style.backgroundImage= "url("+n+")"
+}
+
+function showwall() {
+  if (editwall.style.display == "flex"){
+    editwall.style.display = "none"
+  } else {
+    editwall.style.display = "flex"
+  }
+}
 
 //shortcuts
 
@@ -20,7 +38,11 @@ for (let i = 1; i < 5; i++) {
 
 function editshort(n) {
   warning.innerHTML = ""
-  shortmenu.style.display = "flex"
+  if (shortmenu.style.display == "flex") {
+    shortmenu.style.display = "none"
+  } else {
+    shortmenu.style.display = "flex"
+  }
   link.value = localStorage.getItem(n)
   label.value = localStorage.getItem("label"+n)
   shortnum = n
@@ -49,8 +71,6 @@ function AddShortcut() {
 function shortcut(n) {
   window.open(localStorage.getItem(n))
 }
-
-
 
 
 // search bar

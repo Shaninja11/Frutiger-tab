@@ -3,7 +3,6 @@
 
 
 body {
-    background-image: url('wallpaper.jpg');
     background-size: cover;
     background-attachment: fixed;
     background-position: center;
@@ -27,7 +26,7 @@ body {
 .inputField {
     position: relative;
     background-color: rgba(255, 255, 255, 0);
-    color: rgba(33, 32, 32, 0.644);
+    color: rgba(0, 0, 0, 0.644);
     border-color: rgba(75, 75, 75, 0.422);
     border-radius: 20px;
     border-width: 3px;
@@ -68,7 +67,7 @@ body {
 .shortfiller {
     position: relative;
     background-color: rgba(255, 255, 255, 0);
-    color: rgba(41, 41, 41, 0.497);
+    color: rgba(0, 0, 0, 0.906);
     border-color: rgba(75, 75, 75, 0.422);
     border-radius: 20px;
     border-width: 3px;
@@ -80,7 +79,7 @@ body {
 .shorts {
     margin: 0px;
     background-color: rgba(255, 255, 255, 0);
-    color: rgba(41, 41, 41, 0.497);
+    color: rgba(0, 0, 0, 100);
     border-style: none;
     height: 100%;
     width: 100%;
@@ -122,4 +121,42 @@ label {
     font-size: 15px;
     align-self: center;
     
+}
+
+.editwall {
+    position: fixed;
+    right: 10px;
+    bottom: 50px;
+    width: 120px;
+    height: 90dvh;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(0, 0, 0, 0.644);
+    border-color: rgba(75, 75, 75, 0.422);
+    border-radius: 20px;
+    border-width: 3px;
+    border-style: solid;
+    backdrop-filter: blur(5px);
+    display: none;
+    flex-direction: column;
+}
+
+.wallbtn {
+    position: fixed;
+    right: 10px;
+    bottom: 10px;
+    width: 120px;
+    height: 30px;
+    background-color: rgba(255, 255, 255, 0);
+    color: rgba(0, 0, 0, 0.644);
+    border-color: rgba(75, 75, 75, 0.422);
+    border-radius: 20px;
+    border-width: 3px;
+    border-style: solid;
+    backdrop-filter: blur(5px);
+}
+
+.choosewall {
+    height: 100%;
+    border-radius: 10px;
+    margin: 5px;
 }
