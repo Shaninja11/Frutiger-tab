@@ -1,17 +1,52 @@
 const inputField = document.getElementById("inputField");
 const providerSelect = document.getElementById("chooseprov");
-const warning = document.getElementById("warning")
-const editwall = document.getElementById("editwall")
+const warning = document.getElementById("warning");
+const editwall = document.getElementById("editwall");
 var btn = document.getElementById('btn');
-var wallpaper = 'Wallpapers/Blue.jpg'
+var wallpaper = 'Wallpapers/Blue.jpg';
 var link = document.getElementById('link');
-var label = document.getElementById("label")
-var shortmenu = document.getElementById("shortmenu")
-var shortnum = ""
+var label = document.getElementById("label");
+var shortmenu = document.getElementById("shortmenu");
+var shortnum = "";
 
-// wallpaper
+//NASA - This is the ONLY fully AI section
+
+async function setApodBackground() {
+  try {
+    const response = await fetch(
+      "https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=DEMO_KEY"
+    );
+    if (!response.ok) throw new Error(`NASA API: ${response.status}`);
+
+    const data = await response.json();
+    const entries = Array.isArray(data) ? data : [data];
+
+    const image = entries
+      .filter(item => item.media_type === "image" && item.hdurl)
+      .sort((a, b) => b.date.localeCompare(a.date))[0];
+
+    if (!image) throw new Error("No APOD image found");
+
+    document.body.style.backgroundImage = `url("${image.hdurl}")`;
+  } catch (error) {
+    console.error("Could not set APOD background:", error);
+  }
+}
+
+function nasa() {
+  localStorage.setItem("wp", "nasa")
+  setApodBackground()
+}
+
+//wallpaper
+console.log(localStorage.getItem("wp"))
 if (localStorage.getItem("wp") != null) {wallpaper = localStorage.getItem("wp")}
-document.body.style.backgroundImage= "url("+wallpaper+")"
+
+if (localStorage.getItem("wp") == "nasa") {setApodBackground()}
+else {
+  document.body.style.backgroundImage= "url("+wallpaper+")"
+}
+
 function choosewall(n){
   localStorage.setItem("wp", n)
   document.body.style.backgroundImage= "url("+n+")"
@@ -73,7 +108,7 @@ function shortcut(n) {
 }
 
 
-// search bar
+// search bar - AI cleaned it up and fixed one bug but I wrote the original script
 
 function search() {
   event.preventDefault();
