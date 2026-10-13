@@ -1,0 +1,63 @@
+name: Update APOD background
+
+on:
+  schedule:
+    - cron: "17 12 * * *"
+      timezone: "America/New_York"
+  workflow_dispatch: 
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+jobs:
+  publish:
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deploy.outputs.page_url }}
+
+    steps:
+      - uses: actions/checkout@v6
+
+      - name: Save latest image URL
+        env:
+          NASA_API_KEY: ${{ secrets.NASA_API_KEY }}
+        run: |
+          python3 - <<'PY'
+          import json
+          import os
+          from urllib.parse import urlencode
+          from urllib.request import urlopen
+
+          url = (
+              "https://science.nasa.gov/wp-json/wp/v2/apod-basic/?"
+              + urlencode({"api_key": os.environ["NASA_API_KEY"]})
+          )
+
+          with urlopen(url, timeout=30) as response:
+              data = json.load(response)
+
+          entries = data if isinstance(data, list) else [data]
+          images = [
+              item for item in entries
+              if item.get("media_type") == "image" and item.get("hdurl")
+          ]
+          if not images:
+              raise SystemExit("No APOD image found")
+
+          latest = max(images, key=lambda item: item["date"])
+          with open("apod.json", "w", encoding="utf-8") as file:
+              json.dump(
+                  {"date": latest["date"], "hdurl": latest["hdurl"]},
+                  file
+              )
+          PY
+
+      - uses: actions/configure-pages@v5
+      - uses: actions/upload-pages-artifact@v4
+        with:
+          path: .
+      - id: deploy
+        uses: actions/deploy-pages@v4
