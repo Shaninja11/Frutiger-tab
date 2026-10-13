@@ -1,11 +1,13 @@
 name: Update APOD background
 
 on:
+  push:
+    branches: [main]
   schedule:
     - cron: "17 12 * * *"
       timezone: "America/New_York"
-  workflow_dispatch: 
-
+  workflow_dispatch:
+    
 permissions:
   contents: read
   pages: write
