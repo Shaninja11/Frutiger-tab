@@ -14,25 +14,17 @@ var shortnum = "";
 
 async function setApodBackground() {
   try {
-    const response = await fetch(
-      "https://science.nasa.gov/wp-json/wp/v2/apod-basic/?api_key=DEMO_KEY"
-    );
-    if (!response.ok) throw new Error(`NASA API: ${response.status}`);
+    const response = await fetch("./apod.json", { cache: "no-cache" });
+    if (!response.ok) throw new Error(`APOD JSON: ${response.status}`);
 
-    const data = await response.json();
-    const entries = Array.isArray(data) ? data : [data];
-
-    const image = entries
-      .filter(item => item.media_type === "image" && item.hdurl)
-      .sort((a, b) => b.date.localeCompare(a.date))[0];
-
-    if (!image) throw new Error("No APOD image found");
-
-    document.body.style.backgroundImage = `url("${image.hdurl}")`;
+    const { hdurl } = await response.json();
+    document.body.style.backgroundImage = `url("${hdurl}")`;
   } catch (error) {
     console.error("Could not set APOD background:", error);
   }
 }
+
+setApodBackground();
 
 function nasa() {
   localStorage.setItem("wp", "nasa")
