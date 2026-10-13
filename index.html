@@ -6,7 +6,7 @@
         <link rel="stylesheet" href="style.css">
         <title>Start Page</title>
     </head>
-    <body id="body">
+    <body>
         <main>
             <div class="searchbox">
                 <form onsubmit="search()">
@@ -40,9 +40,9 @@
             <div class="setshort" id="shortmenu">
                 <p id="warning" class="warning"></p>
                 <label for="label">Label</label>
-                <input class="shortfiller" name="label" type="text" id="label" placeholder="name"/>
+                <input class="shortfiller" name="label" type="text" id="label" placeholder="Label"/>
                 <label for="link">URL</label>
-                <input class="shortfiller" name="link" type="url" value="https://" id="link" />
+                <input class="shortfiller" placeholder="URL" name="link" type="url" value="https://" id="link" />
                 <input class="shortfiller" onclick="AddShortcut()" type="button" id="btn" value="Update" />
             </div>
             <button class="wallbtn" onclick="showwall()">Edit Wallpaper</button>

@@ -2,6 +2,7 @@ const inputField = document.getElementById("inputField");
 const providerSelect = document.getElementById("chooseprov");
 const warning = document.getElementById("warning");
 const editwall = document.getElementById("editwall");
+var r = document.querySelector(':root');
 var btn = document.getElementById('btn');
 var wallpaper = 'Wallpapers/Blue.jpg';
 var link = document.getElementById('link');
@@ -9,7 +10,7 @@ var label = document.getElementById("label");
 var shortmenu = document.getElementById("shortmenu");
 var shortnum = "";
 
-//NASA - This is the ONLY fully AI section
+//NASA - This is the ONLY fully AI section - Due to public documentation being broken
 
 async function setApodBackground() {
   try {
@@ -38,7 +39,8 @@ function nasa() {
   setApodBackground()
 }
 
-//wallpaper
+//Wallpaper
+
 console.log(localStorage.getItem("wp"))
 if (localStorage.getItem("wp") != null) {wallpaper = localStorage.getItem("wp")}
 
@@ -60,7 +62,7 @@ function showwall() {
   }
 }
 
-//shortcuts
+//Shortcuts
 
 for (let i = 1; i < 5; i++) {
   if (localStorage.getItem("label"+i) != null){
@@ -108,7 +110,7 @@ function shortcut(n) {
 }
 
 
-// search bar - AI cleaned it up and fixed one bug but I wrote the original script
+// Search bar - AI cleaned it up and fixed one bug but I wrote the original script
 
 function search() {
   event.preventDefault();
