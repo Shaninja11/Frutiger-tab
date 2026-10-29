@@ -132,5 +132,7 @@ function search() {
       providerUrl = "https://www.ecosia.org/search?q=";
   }
 
-  window.open(providerUrl + inputField.value, "_self");
+  if (inputField.value != "") {
+    window.open(providerUrl + inputField.value, "_self");
+  }
 }

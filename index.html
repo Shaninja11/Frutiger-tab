@@ -10,10 +10,11 @@
         <main>
             <button id="darkbtn" class="darkbtn" onclick="darklight()"></button>
             <div class="searchbox">
-                <form onsubmit="search()">
-                    <input style=" width: 50vw; font-size: 40px;" type="text" class="inputField" id="inputField" placeholder="Search">
+                <form id="search" onsubmit="search()">
+                    <input style=" width: 50vw; height: 50px; font-size: 40px;" type="text" class="inputField" id="inputField" placeholder="Search">
                 </form>
-                <select style="width: 10vw; font-size: 20px; margin-top: 5px; margin-left: 10px;" class="inputField" name="prov" id="chooseprov">
+                <button class = "inputField" style="background-size: 80%; background-repeat: no-repeat; background-position: center; background-image:light-dark(url(./Icons/search-black.svg),url(./Icons/search-white.svg)); width: 57px; height: 57px; font-size: 20px; margin-left: 10px;" form="search" type="submit"></button>
+                <select style="width: 120px; font-size: 20px; margin-left: 10px;" class="inputField" name="prov" id="chooseprov">
                     <option value="1">Ecosia</option>
                     <option value="2">Startpage</option>
                     <option value="3">Brave</option>
