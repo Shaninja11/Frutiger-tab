@@ -1,11 +1,13 @@
 @import url('https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap');
 
 :root {
-    --div-background: rgba(255, 255, 255, 0.3);
+    color-scheme: light dark;
+    --light-blur: rgba(255, 255, 255, 0.3);
+    --dark-blur: rgba(0, 0, 0, 0.397);
 }
 
 * {
-    border-color:rgba(75, 75, 75, 0.422);
+    border-color:light-dark(rgba(69, 69, 69, 0.422),rgba(255, 255, 255, 0.33));
 }
 
 body {
@@ -17,8 +19,7 @@ body {
     font-optical-sizing: auto;
     font-weight: 450;
     font-style: normal;
-    color: rgb(0, 0, 0);
-    /* border-color: rgba(170, 170, 170, 0.742); */
+    color: light-dark(rgb(0,0,0), rgba(234, 234, 234, 0.705));
 }
 
 button,
@@ -46,11 +47,11 @@ option {
 
 .inputField {
     position: relative;
-    background-color: var(--div-background);
+    background-color: light-dark(var(--light-blur), var(--dark-blur));
     border-radius: 20px;
     border-width: 3px;
     border-style: solid;
-    backdrop-filter: blur(5px);
+    backdrop-filter: blur(10px);
     height: 50px;
 }
 
@@ -59,7 +60,7 @@ option {
     margin-left: 20%;
     margin-right: 20%;
     margin-top: 5vh;
-    background-color: var(--div-background);
+    background-color: light-dark(var(--light-blur), var(--dark-blur));
     border-radius: 20px;
     border-width: 3px;
     border-style: solid;
@@ -83,9 +84,9 @@ option {
 
 .shortfiller {
     position: relative;
-    background-color: var(--div-background);
-    border-radius: 20px;
-    border-width: 3px;
+    background-color: light-dark(var(--light-blur), var(--dark-blur));
+    border-radius: 10px;
+    border-width: 3px;    border-color: gray;
     border-style: solid;
     backdrop-filter: blur(5px);
     margin-top: 4px;
@@ -97,6 +98,7 @@ option {
     border-style: none;
     height: 100%;
     width: 100%;
+    cursor: pointer;
 }
 
 label {
@@ -111,6 +113,7 @@ label {
     border-style: solid;
     border-radius: 10px;
     border-width: 3px;
+    backdrop-filter: blur(10px);
     height: 6vh;
     flex: auto;
 }
@@ -118,20 +121,27 @@ label {
 .editshort {
     background-color: rgba(0, 0, 0, 0);
     color: rgba(0, 0, 0, 100);
-    border-radius: 5px;
+    border-radius: 25%;
     position: relative;
     border-style: solid;
     margin-top: 5px;
     margin-right: 5px;
     margin-bottom: 20px;
     margin-left: 5px;
+    height: 80%;
     width: auto;
+    cursor: pointer;
 }
 
 .warning {
-    color: rgb(255, 0, 0);
+    color: rgb(152, 0, 0);
     font-size: 15px;
     align-self: center;
+    background-color: light-dark(var(--light-blur), var(--dark-blur));
+    border-radius: 5px;
+    border-width: 3px;
+    border-style: solid;
+    backdrop-filter: blur(5px);
     
 }
 
@@ -141,7 +151,7 @@ label {
     bottom: 50px;
     width: 200px;
     height: 90dvh;
-    background-color: var(--div-background);
+    background-color: light-dark(var(--light-blur), var(--dark-blur));
     border-radius: 20px;
     border-width: 3px;
     border-style: solid;
@@ -156,15 +166,33 @@ label {
     bottom: 10px;
     width: 150px;
     height: 30px;
-    background-color: var(--div-background);
+    background-color: light-dark(var(--light-blur), var(--dark-blur));
     border-radius: 20px;
     border-width: 3px;
     border-style: solid;
     backdrop-filter: blur(5px);
+    cursor: pointer;
 }
 
 .choosewall {
     height: 100%;
     border-radius: 10px;
     margin: 5px;
+}
+
+.darkbtn {
+    position: fixed;
+    left: 10px;
+    top: 10px;
+    width: 40px;
+    height: 40px;
+    border-radius: 20%;
+    background:light-dark(url(./Icons/sun.svg),url(./Icons/moon.svg));
+    background-color: light-dark(var(--light-blur), var(--dark-blur));
+    backdrop-filter: blur(5px);
+    border-style: solid;
+    border-width: 3px;
+    color: white; 
+    padding: 12px 16px;
+    cursor: pointer;
 }

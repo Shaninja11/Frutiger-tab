@@ -2,6 +2,7 @@ const inputField = document.getElementById("inputField");
 const providerSelect = document.getElementById("chooseprov");
 const warning = document.getElementById("warning");
 const editwall = document.getElementById("editwall");
+const darkbtn = window.getComputedStyle(document.getElementById("darkbtn"))
 var r = document.querySelector(':root');
 var btn = document.getElementById('btn');
 var wallpaper = 'Wallpapers/Blue.jpg';
@@ -9,6 +10,13 @@ var link = document.getElementById('link');
 var label = document.getElementById("label");
 var shortmenu = document.getElementById("shortmenu");
 var shortnum = "";
+
+//Light/Darkmode
+function darklight(){
+  console.log(darkbtn.getPropertyValue('background'))
+  if (darkbtn.getPropertyValue('background').includes('moon')) {r.style.setProperty('color-scheme', 'light')}
+  else {r.style.setProperty('color-scheme', 'dark')}
+}
 
 //NASA - This is the ONLY fully AI section - Due to public documentation being broken
 
@@ -98,7 +106,9 @@ function AddShortcut() {
 }
 
 function shortcut(n) {
-  window.open(localStorage.getItem(n))
+  if (localStorage.getItem(n) != null) {
+    window.open(localStorage.getItem(n))
+  }
 }
 
 
@@ -122,5 +132,5 @@ function search() {
       providerUrl = "https://www.ecosia.org/search?q=";
   }
 
-  window.open(providerUrl + inputField.value, "_blank");
+  window.open(providerUrl + inputField.value, "_self");
 }

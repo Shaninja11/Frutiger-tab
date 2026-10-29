@@ -8,6 +8,7 @@
     </head>
     <body>
         <main>
+            <button id="darkbtn" class="darkbtn" onclick="darklight()"></button>
             <div class="searchbox">
                 <form onsubmit="search()">
                     <input style=" width: 50vw; font-size: 40px;" type="text" class="inputField" id="inputField" placeholder="Search">
@@ -51,7 +52,7 @@
                 <button style="background: url(./Wallpapers/Green.jpg); background-size: cover;" class="choosewall" onclick="choosewall('./Wallpapers/Green.jpg')"></button>
                 <button style="background: url(./Wallpapers/Orange.jpg); background-size: cover;" class="choosewall" onclick="choosewall('./Wallpapers/Orange.jpg')"></button>
                 <button style="background: url(./Wallpapers/Trees.jpg); background-size: cover;" class="choosewall" onclick="choosewall('./Wallpapers/Trees.jpg')"></button>
-                <button class="choosewall" onclick="nasa()">Nasa (WIP)</button>
+                <button class="choosewall" onclick="nasa()">Nasa</button>
             </div>
         </main>
         <script src="script.js"></script>
